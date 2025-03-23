@@ -10,6 +10,11 @@ class CartPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cartItems = ref.watch(cartProvider);
     final totalPrice = ref.watch(cartProvider.notifier).totalPrice;
+    // Calculate total quantity of items
+    final totalQuantity = cartItems.fold<int>(
+      0,
+      (sum, item) => sum + item.quantity,
+    );
 
     return Scaffold(
       appBar: AppBar(title: const Text('Cart'), centerTitle: true),
@@ -86,7 +91,8 @@ class CartPage extends ConsumerWidget {
                               radius: 10,
                               backgroundColor: Colors.white, // White background
                               child: Text(
-                                cartItems.length.toString(),
+                                totalQuantity
+                                    .toString(), // Display total quantity
                                 style: const TextStyle(
                                   fontSize: 12,
                                   color: Colors.red, // Red text
