@@ -22,12 +22,13 @@ class CartItemCard extends ConsumerWidget {
             children: [
               Image.network(
                 product.thumbnail,
-                width: 80,
+                //height: 60,
+                width: 100,
                 fit:
                     BoxFit
                         .cover, // Ensures the image covers the available space
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 14),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +67,7 @@ class CartItemCard extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10), // Add some spacing
+                    const SizedBox(height: 8), // Add some spacing
                     Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
@@ -76,7 +77,7 @@ class CartItemCard extends ConsumerWidget {
                         decoration: BoxDecoration(
                           color: Colors.grey[200], // Light grey background
                           borderRadius: BorderRadius.circular(
-                            6,
+                            12,
                           ), // Slightly smaller rounded corners
                         ),
                         child: Row(
@@ -93,7 +94,7 @@ class CartItemCard extends ConsumerWidget {
                               },
                               icon: const Icon(
                                 Icons.remove,
-                                size: 16,
+                                size: 25,
                               ), // Smaller icon
                               padding: const EdgeInsets.all(
                                 1,
@@ -111,7 +112,7 @@ class CartItemCard extends ConsumerWidget {
                               child: Text(
                                 cartItem.quantity.toString(),
                                 style: const TextStyle(
-                                  fontSize: 14, // Smaller text
+                                  fontSize: 18, // Smaller text
                                   color: Colors.red,
                                 ),
                               ),
@@ -127,7 +128,7 @@ class CartItemCard extends ConsumerWidget {
                               },
                               icon: const Icon(
                                 Icons.add,
-                                size: 16,
+                                size: 25,
                               ), // Smaller icon
                               padding: const EdgeInsets.all(
                                 1,

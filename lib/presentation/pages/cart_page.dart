@@ -31,7 +31,7 @@ class CartPage extends ConsumerWidget {
           cartItems.isEmpty
               ? null
               : Container(
-                padding: const EdgeInsets.all(25.0),
+                padding: const EdgeInsets.all(35.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: const BorderRadius.only(
@@ -54,10 +54,18 @@ class CartPage extends ConsumerWidget {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('AMOUNT PRICE'),
+                        const Text(
+                          'Amount Price',
+                          style: TextStyle(fontSize: 20),
+                        ),
                         Text(
                           '₹${totalPrice.toStringAsFixed(2)}',
-                          style: Theme.of(context).textTheme.bodyLarge,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
+
+                          //Theme.of(context).textTheme.bodyLarge,
                         ),
                       ],
                     ),
